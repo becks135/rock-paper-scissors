@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Saira Semi Condensed' rel='stylesheet'>
+
     <title>Document</title>
+    <style>
+        body {
+            font-family: 'Saira Semi Condensed';
+            background-color: lightslategray;
+        }
+
+        .heading {
+            font-size: 75px;
+            text-align: center;
+
+        }
+
+        div.plays {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+
+
+        .playerSelection,
+        .computer-play {
+            width: 75px;
+            height: 75px;
+            border-color: darkgrey;
+            border-style: solid;
+        }
+
+        .playerSelection:hover {
+            filter: invert(100%);
+            border-color: red;
+        }
+
+        .scorebox {
+            border-style: solid;
+            border-width: 2px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .play-box {
+            display: grid;
+            grid-template-columns: 300px 50px 130px;
+            grid-template-rows: 100px 100px;
+            grid-template-areas:
+                "pScore vs cScore"
+                "pOptions vs cOptions";
+            justify-content: center;
+            justify-items: center;
+            align-items:center;
+        }
+
+        .playerScore {
+            grid-area: pScore;
+        }
+
+        .computerScore {
+            grid-area: cScore;
+        }
+
+        .vs {
+            grid-area: vs;
+            align-self: center;
+        }
+
+        .player-options {
+            grid-area: pOptions;
+        }
+
+        .computer-options {
+            grid-area: cOptions;
+
+        }
+    </style>
 </head>
+
 <body>
-    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/script.js" defer></script>
+    <h1 class="heading">Rock Paper Scissors Shoot...</h1>
+    <div class="play-box">
+        <div class="playerScore">You
+            <span class="scorebox ps">0</span>
+        </div>
+        <div class="vs">vs.</div>
+        <div class="computerScore">Computer
+            <span class="scorebox cs">0</span>
+        </div>
+        <!--div class="plays"-->
+        <div class="player-options">
+            <img src="images/rock.png" class="rock playerSelection">
+            <img src="images/paper.png" class="paper playerSelection">
+            <img src="images/scissors.png" class="scissors playerSelection">
+        </div>
+        <div class="computer-options"><img class="computer-play" height=100px src="images/rock.png"></div>
+        <!--/div-->
+    </div>
+    <div class="game-message"></div>
 </body>
+
 </html>
